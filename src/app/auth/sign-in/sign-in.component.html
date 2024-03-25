@@ -1,0 +1,35 @@
+<div class="container flex justify-content-start h-full w-full">
+  <img src="/assets/images/auth-desktop.png" alt="chair image" />
+  <form
+    class="main-form h-full flex flex-column justify-content-center align-items-center"
+  >
+    <div class="header flex flex-column align-items-start mb-3 w-full">
+      <h1>Sign In</h1>
+      <p>
+        don't have an account yet?
+        <span [routerLink]="['/auth/signUp']">Sign Up</span>
+      </p>
+    </div>
+
+    <div class="p-float-label mb-5 w-full">
+      <input pInputText id="email" type="email" class="w-full" />
+      <label for="email">Email</label>
+    </div>
+    <div class="p-float-label w-full mb-3">
+      <p-password [toggleMask]="true"></p-password>
+      <label for="password">Password</label>
+    </div>
+    <form class="flex align-items-center justify-content-between mb-3 w-full">
+      <div class="checkbox">
+        <p-checkbox
+          formControlName="remember"
+          value="remember"
+          inputId="remember"
+        ></p-checkbox>
+        <label for="remember" class="ml-1">Remember Me</label>
+      </div>
+      <strong class="text">Forgot password?</strong>
+    </form>
+    <button pButton pRipple label="Sign in" class="w-full p-3"></button>
+  </form>
+</div>

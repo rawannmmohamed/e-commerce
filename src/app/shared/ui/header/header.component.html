@@ -1,0 +1,23 @@
+<nav class="px-5">
+  <p-menubar [model]="items"  >
+    <ng-template let-item pTemplate="start" class="logo">
+      <img src="./assets/svgs/logos/headerLogo.svg" alt="Logo" />
+    </ng-template>
+    <ng-template let-item pTemplate="end">
+      <div class="icon-container flex gap-3">
+        <button type="button" class="icon-button" routerLink="/main/account">
+          <img
+            src="./assets/svgs/icons/user-circle.svg"
+            alt="User account icon"
+          />
+        </button>
+        <button type="button" class="icon-button" routerLink="/main/cart">
+          <img
+            src="./assets/svgs/icons/shopping-bag.svg"
+            alt="Shopping cart icon"
+          />
+        </button>
+      </div>
+    </ng-template>
+  </p-menubar>
+</nav>

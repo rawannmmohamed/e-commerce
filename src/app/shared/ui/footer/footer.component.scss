@@ -1,0 +1,51 @@
+:host {
+  footer{
+    background-color: #141718;
+    color: white ;
+  }
+  .icon-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .hr1{
+    height: 24px;
+  }
+  ul{
+    list-style: none;
+  }
+ 
+  @media (max-width:750px) {
+   
+   .upper,.lower,.logo,.copy-rights {
+      display: flex;
+      flex-direction: column;
+      justify-content: center ;
+      align-items: center ;
+      text-align: center;
+    }
+    
+    ul{
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+      align-items:center;
+      text-align: center;
+      
+    }
+    .social-icons{
+
+    }
+    .hr1{
+           height: 1px;
+           width: 50px;
+    }
+    .hr2{
+      height: 1px;
+      width: 90%;
+    }
+  }
+ 
+}

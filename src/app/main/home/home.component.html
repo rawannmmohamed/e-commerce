@@ -1,0 +1,81 @@
+<div class="p-5 flex flex-column justify-content-between">
+  <p-galleria [value]="images" [showIndicators]="true" [showThumbnails]="false">
+    <ng-template pTemplate="item" let-item>
+      <img [src]="item.itemImageSrc" />
+    </ng-template>
+  </p-galleria>
+  <div class="text flex justify-content-between align-items-center">
+    <h1 class="w-3">Simply Unique/ Simply Better.</h1>
+    <p class="w-5">
+      <strong>3legant</strong> is a gift & decorations store based in HCMC,
+      Vietnam. Est since 2019.
+    </p>
+  </div>
+  <div class="grid nested-grid flex justify-content-center">
+    <div class="col-5">
+      <div class="placeholder text-center h-full">
+        <div
+          class="text flex flex-column justify-content-center align-items-center"
+        >
+          <h2>Living Room</h2>
+          <a href="">Shop Now</a>
+        </div>
+        <img src="/assets/images/ImagePlaceholder1.png" alt="" />
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="grid">
+        <div class="col-12">
+          <div class="placeholder text-center font-bold">
+            <div
+              class="text flex flex-column justify-content-center align-items-center"
+            >
+              <h2>Bed Room</h2>
+              <a href="">Shop Now</a>
+            </div>
+            <img src="/assets/images/ImagePlaceholder2.png" alt="" />
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="placeholder text-center font-bold">
+            <div
+              class="text flex flex-column justify-content-center align-items-center"
+            >
+              <h2>Kitchen</h2>
+              <a href="">Shop Now</a>
+            </div>
+            <img src="/assets/images/ImagePlaceholder3.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href=""> More Products <i class="pi pi-arrow-right"></i></a>
+
+  <p-carousel [value]="products" [numVisible]="3" [numScroll]="1">
+    <ng-template let-product pTemplate="item">
+      <div
+        class="border-1 surface-border border-round m-2 text-center py-5 px-3"
+      >
+        <div class="mb-3 flex flex-column align-items-center">
+          <img
+            src="{{ product.image }}"
+            [alt]="product.name"
+            class="w-6 shadow-2"
+          />
+        </div>
+        <div>
+          <h4 class="mb-1">{{ product.name }}</h4>
+          <h6 class="mt-0 mb-3">{{ "$" + product.price }}</h6>
+          <div
+            class="mt-5 flex align-items-center justify-content-center gap-2"
+          >
+            <p-button icon="pi pi-heart" [rounded]="true" />
+            <p-button icon="pi pi-shopping-cart" [rounded]="true" />
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>

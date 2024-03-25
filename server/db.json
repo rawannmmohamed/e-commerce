@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "email": "user1@example.com",
+      "password": "password1",
+      "cart": [],
+      "wishlist": [],
+      "orders": []
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "email": "user2@example.com",
+      "password": "password2",
+      "cart": [],
+      "wishlist": [],
+      "orders": []
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Chair",
+      "description": "A comfortable chair for your home or office.",
+      "price": 50,
+      "image": "chair.jpg",
+      "stock": 10
+    },
+    {
+      "id": 2,
+      "name": "Table",
+      "description": "A sturdy table for dining or working.",
+      "price": 100,
+      "image": "table.jpg",
+      "stock": 5
+    }
+  ]
+}

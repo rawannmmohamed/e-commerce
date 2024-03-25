@@ -1,0 +1,141 @@
+<div class="container flex align-items-center justify-content-center">
+  <p-stepper orientation="vertical">
+    <p-stepperPanel header="Account">
+      <ng-template
+        pTemplate="content"
+        let-nextCallback="nextCallback"
+        let-index="index"
+      >
+        <div class="flex flex-column font-medium">
+          <div class="p-float-label mt-5 w-full">
+            <input pInputText id="name" type="text" class="w-7" />
+            <label for="name">Your Name</label>
+          </div>
+          <div class="p-float-label mt-5 w-full">
+            <input pInputText id="userName" type="text" class="w-7" />
+            <label for="userName">Username</label>
+          </div>
+          <div class="p-float-label mt-5 w-full">
+            <input pInputText id="email" type="email" class="w-7" />
+            <label for="email">Email address</label>
+          </div>
+        </div>
+
+        <div class="flex py-4">
+          <p-button label="Next" (onClick)="nextCallback.emit()" /></div
+      ></ng-template>
+    </p-stepperPanel>
+    <p-stepperPanel header="Address">
+      <ng-template
+        pTemplate="content"
+        let-prevCallback="prevCallback"
+        let-nextCallback="nextCallback"
+        let-index="index"
+      >
+        <div class="flex flex-column font-medium">
+          <div class="p-float-label mt-5 w-full">
+            <input pInputText id="name" type="text" class="w-7" />
+            <label for="name">Street</label>
+          </div>
+          <div class="p-float-label mt-5 w-full">
+            <input pInputText id="name" type="text" class="w-7" />
+            <label for="name">City</label>
+          </div>
+          <div class="p-float-label mt-5 w-full">
+            <input pInputText id="name" type="text" class="w-7" />
+            <label for="name">State</label>
+          </div>
+        </div>
+        <div class="flex py-4 gap-2">
+          <p-button
+            label="Back"
+            severity="secondary"
+            (onClick)="prevCallback.emit()"
+          />
+          <p-button label="Next" (onClick)="nextCallback.emit()" /></div
+      ></ng-template>
+    </p-stepperPanel>
+    <p-stepperPanel header="Orders">
+      <ng-template
+        pTemplate="content"
+        let-prevCallback="prevCallback"
+        let-nextCallback="nextCallback"
+        let-index="index"
+      >
+        <p-table
+          [value]="orders"
+          [paginator]="true"
+          [rows]="5"
+          [tableStyle]="{ width: '50%' }"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Number ID</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Price</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-order>
+            <tr>
+              <td>{{ order.id }}</td>
+              <td>{{ order.date }}</td>
+              <td>{{ order.status }}</td>
+              <td>{{ order.price }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+        <div class="flex py-4">
+          <p-button
+          label="Back"
+          severity="secondary"
+          (onClick)="prevCallback.emit()"
+        />
+        <p-button label="Next" (onClick)="nextCallback.emit()" /></div
+    ></ng-template>
+    </p-stepperPanel>
+    <p-stepperPanel header="Wishlist">
+      <ng-template
+        pTemplate="content"
+        let-prevCallback="prevCallback"
+        let-index="index"
+      >
+        <p-table
+          [value]="wishList"
+          [paginator]="true"
+          [rows]="2"
+          [tableStyle]="{ width: '70%', height: '50%' }"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Product</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-order>
+            <tr>
+              <td>
+                <img
+                  [src]="order.image"
+                  [alt]="order.name"
+                  width="100"
+                  class="shadow-4"
+                />
+              </td>
+              <td>{{ order.name }}</td>
+              <td>{{ order.price }}</td>
+              <td>
+                <p-button icon="pi pi-times" [rounded]="true" />
+                <p-button icon="pi pi-shopping-cart" [rounded]="true" />
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+        <div class="flex py-4">
+          <p-button label="Back" (onClick)="prevCallback.emit()" /></div
+      ></ng-template>
+    </p-stepperPanel>
+  </p-stepper>
+</div>

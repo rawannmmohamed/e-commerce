@@ -1,0 +1,24 @@
+:host {
+  ::ng-deep {
+    p-stepper {
+      height: 100vh;
+      width: 80%;
+      .p-stepper-header {
+        p-stepperheader {
+          .p-stepper-title {
+            font-weight: bold;
+          }
+          .p-stepper-number {
+            display: none;
+          }
+        }
+      }
+      .p-stepper-panel-active {
+        color: green;
+      }
+    }
+    .p-button {
+      margin: 3px;
+    }
+  }
+}

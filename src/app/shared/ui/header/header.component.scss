@@ -1,0 +1,29 @@
+:host {
+  .icon-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  p-menubar {
+    ::ng-deep {
+      .p-menubar {
+        background-color: white;
+        color: #6c7275;
+        border: none;
+      }
+      p-menubarsub {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .p-menuitem-text {
+          color: #6c7275;
+        }
+      }
+      
+    }
+  }
+  
+}

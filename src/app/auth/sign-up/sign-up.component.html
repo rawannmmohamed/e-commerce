@@ -1,0 +1,43 @@
+<div class="container flex justify-content-start h-full w-full">
+  <img src="/assets/images/auth-desktop.png" alt="chair image" />
+  <form
+    class="main-form h-full flex flex-column justify-content-center align-items-center"
+  >
+    <div class="header flex flex-column align-items-start mb-3 w-full">
+      <h1>Sign Up</h1>
+      <p>
+        Already have an account?
+        <span [routerLink]="['/auth/login']">Sign in</span>
+      </p>
+    </div>
+
+    <div class="p-float-label mb-5 w-full">
+      <input pInputText id="name" type="text" class="w-full" />
+      <label for="name">Your Name</label>
+    </div>
+    <div class="p-float-label mb-5 w-full">
+      <input pInputText id="userName" type="text" class="w-full" />
+      <label for="userName">Username</label>
+    </div>
+    <div class="p-float-label mb-5 w-full">
+      <input pInputText id="email" type="email" class="w-full" />
+      <label for="email">Email address</label>
+    </div>
+    <div class="p-float-label w-full mb-3">
+      <p-password [toggleMask]="true"></p-password>
+      <label for="password">Password</label>
+    </div>
+    <form class="flex align-items-center mb-3 w-full">
+      <p-checkbox
+        formControlName="remember"
+        value="remember"
+        inputId="remember"
+      ></p-checkbox>
+      <label for="remember" class="ml-1"
+        >I agree with <strong> Privacy Policy</strong> and
+        <strong> Terms of Use</strong></label
+      >
+    </form>
+    <button pButton pRipple label="Sign Up" class="w-full p-3"></button>
+  </form>
+</div>

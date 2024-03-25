@@ -1,0 +1,67 @@
+<div class="p-5 flex justify-content-evenly align-items-center">
+  <p-table
+    #dt
+    [value]="products"
+    [rows]="10"
+    [paginator]="true"
+    [rowHover]="true"
+    dataKey="id"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [showCurrentPageReport]="true"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="min-width: 15rem">Name</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th style="min-width: 10rem">Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.name }}</td>
+        <td>
+          <img
+            [src]="product.image"
+            [alt]="product.name"
+            width="50"
+            class="shadow-4"
+          />
+        </td>
+        <td>{{ product.price | currency : "USD" }}</td>
+
+        <td>
+          <div class="flex align-items-center gap-2">
+            <p-button
+              icon="pi pi-plus"
+              (click)="increaseQuantity(product)"
+            ></p-button>
+            {{ product.quantity }}
+            <p-button
+              icon="pi pi-minus"
+              (click)="decreaseQuantity(product)"
+            ></p-button>
+          </div>
+        </td>
+        <td>
+          {{ product.quantity * product.price | currency : "USD" }}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+        In total there are {{ products ? products.length : 0 }} products.
+      </div>
+    </ng-template>
+  </p-table>
+  <div class="card flex justify-content-center">
+    <p-card header="Cart Summary" [style]="{ width: '360px' }">
+      <h4>Sub total: {{ getTotalPrice() | currency : "USD" }}</h4>
+      <h5>shipping : +$10</h5>
+      <hr />
+      <h2>total: {{ getTotalPrice() + 10 | currency : "USD" }}</h2>
+      <p-button label="Check Out" routerLink='/main/cart/orderComplete'></p-button>
+    </p-card>
+  </div>
+</div>
